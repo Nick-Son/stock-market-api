@@ -2,6 +2,21 @@
   text-align: center;
 }
 
-h1 {
+h1, h3 {
   font-family: josefin sans;
+}
+
+.header {
+  color: white;
+  background: black;
+}
+
+.header > img {
+  max-height: 50px;
+  transform: translate( 20%, 35%);
+}
+
+.header > h3 {
+  display: inline-block;
+  vertical-align: middle;
 }
