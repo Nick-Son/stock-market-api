@@ -10,6 +10,24 @@ input {
   font-size: 1rem;
 }
 
+.error-message {
+  border-radius: 5px;
+  background: red;
+  padding: 10px;
+  color: white;
+  transition: 2s;
+}
+
+button {
+  color: white;
+  background: rgb(58, 56, 56);
+  border: none;
+  border-radius: 5px;
+  padding: 5.5px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
 h1 {
   font-size: 4em;
 }

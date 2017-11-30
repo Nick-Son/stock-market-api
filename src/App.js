@@ -20,18 +20,27 @@ class App extends Component {
   // the first time our component is rendered
   // this method is called...
   componentDidMount() {
-    loadQuoteForStock('nflx')
-      .then((quote) => {
-        this.setState({ quote: quote })
+    this.loadQuote()
+  }
+
+  loadQuote = () => {
+    const { enteredSymbol } = this.state
+
+    loadQuoteForStock(enteredSymbol)
+    .then((quote) => {
+      this.setState({ 
+        quote: quote, 
+        error: null // clear error
       })
-      .catch((error) => {
-        // if 404, not found
-        if (error.response.status === 404) {
-          error = new Error('The stock symbol does not exist')
-        }
-        this.setState({ error: error})
-        console.error(error)
-      })
+    })
+    .catch((error) => {
+      // if 404, not found
+      if (error.response.status === 404) {
+        error = new Error('The stock symbol does not exist')
+      }
+      this.setState({ error: error})
+      console.error(error)
+    })
   }
 
   onChangeEnteredSymbol = (event) => {
@@ -63,7 +72,9 @@ class App extends Component {
             aria-label='Symbol' 
             onChange={ this.onChangeEnteredSymbol }
           />
-          <button>
+          <button
+            onClick={ this.loadQuote }
+          >
             Load Quote
           </button>
         </div>
@@ -71,7 +82,7 @@ class App extends Component {
 
         {
           !!error && // conditional that must pass for this to show
-            <p>{ error.message }</p>
+            <p className="error-message">{ error.message }</p>
         }
 
         {
