@@ -14,6 +14,15 @@ class App extends Component {
     quote: null
   }
 
+  // the first time our component is rendered
+  // this method is called...
+  componentDidMount() {
+    loadQuoteForStock('nflx')
+      .then((quote) => {
+        this.setState({ quote: quote })
+      })
+  }
+
   render() {
     // const quote = this.state.quote
     const { quote } = this.state
@@ -27,7 +36,8 @@ class App extends Component {
           {
             !!quote ? (
               <StockInfo 
-              // or {...quote}
+                // {...quote} this is an alternate method that will pass all key-values
+                // if the they are the same.
                 symbol={quote.symbol}
                 companyName={quote.companyName}
                 primaryExchange={quote.primaryExchange}

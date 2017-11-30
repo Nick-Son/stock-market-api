@@ -16,13 +16,13 @@ function StockInfo({
     <br />
 
     <dl>
-      <dt>Week 52 High</dt>
+      <dt><strong>Week 52 High</strong></dt>
       <dd>{ week52High }</dd>
 
-      <dt>Week 52 Low</dt>
+      <dt><strong>Week 52 Low</strong></dt>
       <dd>{week52Low}</dd>
 
-      <dt>Exchange</dt>
+      <dt><strong>Exchange</strong></dt>
       <dd>{ primaryExchange }</dd>
     </dl>
 
