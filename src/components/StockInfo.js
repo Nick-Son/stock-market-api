@@ -15,16 +15,16 @@ function StockInfo({
     <h3>{ latestPrice} ({ latestSource})</h3>
     <br />
 
-    <dl>
-      <dt><strong>Week 52 High</strong></dt>
-      <dd>{ week52High }</dd>
+    <div>
+      <h3><strong>Week 52 High</strong></h3>
+      <p>{ week52High }</p>
 
-      <dt><strong>Week 52 Low</strong></dt>
-      <dd>{week52Low}</dd>
+      <h3><strong>Week 52 Low</strong></h3>
+      <p>{week52Low}</p>
 
-      <dt><strong>Exchange</strong></dt>
-      <dd>{ primaryExchange }</dd>
-    </dl>
+      <h3><strong>Exchange</strong></h3>
+      <p>{ primaryExchange }</p>
+    </div>
 
   </div>
   )
