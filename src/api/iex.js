@@ -9,5 +9,19 @@ export function loadQuoteForStock(symbol) {
     .then((res) => res.data)
 }
 
+export function loadLogoForStock(symbol) {
+  return api.get(`/stock/${symbol}/logo`)
+    .then((res) => res.data)
+}
+
+export function loadNewsForStock(symbol) {
+  return api.get(`/stock/${symbol}/news/last/5`)
+    .then((res) => res.data)
+}
+
+export function loadChartForStock(symbol) {
+  return api.get(`/stock/${symbol}/chart/6m`)
+    .then((res) => res.data)
+}
 
 

@@ -15,7 +15,6 @@ input {
   background: red;
   padding: 10px;
   color: white;
-  transition: 2s;
 }
 
 button {
@@ -32,13 +31,17 @@ h1 {
   font-size: 4em;
 }
 
-h1, h3 {
+h1, h3, h2 {
   font-family: josefin sans;
 }
 
 .header {
   color: white;
   background: black;
+}
+
+.logo-image {
+  border-radius: 20px;
 }
 
 .header > img {
@@ -92,4 +95,43 @@ h1, h3 {
   color: white;
   border-radius: 10px;
   margin: 10px;
+}
+
+.symbol-history-container {
+  display: flex;
+  width: 1000px;
+  margin: 10px auto;
+}
+
+.news-item-container {
+  width: 1300px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.news-item {
+  width: 600px;
+  margin: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.news-item > h2 {
+  background: black;
+  color: white;
+  padding: 10px;
+}
+
+.news-item > a {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.news-item > p {
+  padding: 10px;
 }
