@@ -192,7 +192,7 @@ class App extends Component {
             //   })
             // console.log(companyLogo)
             return (
-              <div>
+              <div className="main-history-container" >
               {/* <img src={companyLogo} className="logo-image" /> */}
               <SymbolHistory 
                   symbol={quote.symbol}

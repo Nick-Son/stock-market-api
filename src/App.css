@@ -97,6 +97,10 @@ h1, h3, h2 {
   margin: 10px;
 }
 
+.main-history-container {
+  display: flex;
+}
+
 .symbol-history-container {
   display: flex;
   width: 1000px;
