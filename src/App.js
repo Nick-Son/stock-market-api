@@ -5,6 +5,7 @@ import StockInfo from './components/StockInfo'
 import {loadQuoteForStock, loadLogoForStock, loadNewsForStock, loadChartForStock} from './api/iex'
 import SymbolHistory from './components/SymbolHistory'
 import NewsItem from './components/NewsItem'
+import SixMonthTable from './components/SixMonthTable'
 
 // Preloaded Data //
 
@@ -25,8 +26,8 @@ loadNewsForStock('nflx')
   })
 
 loadChartForStock('nflx')
-  .then((chart) => {
-    console.log(chart)
+  .then((tableData) => {
+    console.log(tableData)
   })
 
 // Class //
@@ -39,7 +40,7 @@ class App extends Component {
     companyLogo: 'https://storage.googleapis.com/iex/api/logos/NFLX.png',
     symbolHistory: [],
     companyNews: [],
-    chart: null
+    tableData: null
   }
 
   // the first time our component is rendered
@@ -81,6 +82,11 @@ class App extends Component {
         this.setState({companyNews: companyNews})
       })
     
+    loadChartForStock(enteredSymbol)  
+    .then((tableData) => {
+      this.setState({tableData: tableData})
+      console.log(tableData, 'TD')
+    })
   }
 
   onChangeEnteredSymbol = (event) => {
@@ -93,7 +99,7 @@ class App extends Component {
 
   render() {
     // const quote = this.state.quote
-    const { quote, enteredSymbol, error, companyLogo, symbolHistory, companyNews } = this.state
+    const { quote, enteredSymbol, error, companyLogo, symbolHistory, companyNews, tableData } = this.state
 
     return (
       <div className="App">
@@ -125,7 +131,7 @@ class App extends Component {
             <p className="error-message">{ error.message }</p>
         }
 
-        <img src={companyLogo} className="logo-image" />
+        <img src={companyLogo} className="logo-image" alt="logo" />
 
         {
           !!quote ? (
@@ -163,7 +169,18 @@ class App extends Component {
             })
           }
         </div>
+        <br />
 
+        <h1>Month View</h1>
+
+        {
+          !!tableData ? (
+          <SixMonthTable tableData={tableData} />
+        ) : (
+          <p>Loading</p>
+        )
+        }
+          
         <br />
         <h2>Search History</h2>
         {

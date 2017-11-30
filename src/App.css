@@ -114,24 +114,43 @@ h1, h3, h2 {
   width: 600px;
   margin: 10px;
   border: 1px solid grey;
+  background: cadetblue;
+  color: white;
   border-radius: 10px;
   overflow: scroll;
 }
 
 .news-item > h2 {
-  background: black;
   color: white;
   padding: 10px;
 }
 
+
 .news-item > a {
-  background: black;
+  background: rgb(128, 149, 177);
   color: white;
   padding: 10px;
   border-radius: 5px;
   margin: 10px;
+  border: 1px solid white;
 }
 
 .news-item > p {
+  padding: 10px;
+}
+
+table {
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: grey;
+  color: white;
+}
+
+th {
+  padding: 15px;
+}
+
+td {
   padding: 10px;
 }

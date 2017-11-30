@@ -20,7 +20,7 @@ export function loadNewsForStock(symbol) {
 }
 
 export function loadChartForStock(symbol) {
-  return api.get(`/stock/${symbol}/chart/6m`)
+  return api.get(`/stock/${symbol}/chart/1m`)
     .then((res) => res.data)
 }
 
