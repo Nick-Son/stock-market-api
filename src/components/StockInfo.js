@@ -10,22 +10,32 @@ function StockInfo({
   week52Low
 }) {
   return (
-  <div>
-    <h2>{ symbol }: { companyName }</h2>
-    <h3>{ latestPrice} ({ latestSource})</h3>
+  <div className="main-container">  
+
+    <div className="company-header">
+      <h2>{ symbol }: { companyName }</h2>
+      <h3>{ latestPrice} ({ latestSource})</h3>
+    </div>
     <br />
 
-    <div>
-      <h3><strong>Week 52 High</strong></h3>
-      <p>{ week52High }</p>
+    <div className="stock-info">
+      
+      <div className="info-box-b">
+        <h3><strong>Week 52 High:</strong></h3>
+        <p>{ week52High }</p>
+      </div>
 
-      <h3><strong>Week 52 Low</strong></h3>
-      <p>{week52Low}</p>
+      <div className="info-box-c">
+        <h3><strong>Week 52 Low:</strong></h3>
+        <p>{week52Low}</p>
+      </div>
 
-      <h3><strong>Exchange</strong></h3>
-      <p>{ primaryExchange }</p>
+      <div className="info-box-a">
+        <h3><strong>Exchange:</strong></h3>
+        <p>{ primaryExchange }</p>
+      </div>
+
     </div>
-
   </div>
   )
 }

@@ -13,6 +13,7 @@ loadQuoteForStock('nflx')
 class App extends Component {
   state = {
     error: null,
+    enteredSymbol: 'NFLX',
     quote: null
   }
 
@@ -33,17 +34,41 @@ class App extends Component {
       })
   }
 
+  onChangeEnteredSymbol = (event) => {
+    const input = event.target
+    const value = input.value.trim().toUpperCase()
+    this.setState({
+      enteredSymbol: value
+    })
+  }
+
   render() {
     // const quote = this.state.quote
-    const { quote, error } = this.state
+    const { quote, enteredSymbol, error } = this.state
 
     return (
       <div className="App">
 
         <div className="header"><h3>Built with</h3> <img src={logo} alt="react logo" /></div>
 
-        <h1>React App</h1>
-        
+        <br />
+        <h1>Market Data</h1>
+        <br />
+
+        <div className="search-bar">
+          <label>Search: </label>
+          <input 
+            value={ enteredSymbol } 
+            placeholder="Symbol e.g NFLX" 
+            aria-label='Symbol' 
+            onChange={ this.onChangeEnteredSymbol }
+          />
+          <button>
+            Load Quote
+          </button>
+        </div>
+        <br />
+
         {
           !!error && // conditional that must pass for this to show
             <p>{ error.message }</p>

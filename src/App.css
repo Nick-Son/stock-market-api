@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+html {
+  font-size: 15px;
+}
+
+input {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 4em;
+}
+
 h1, h3 {
   font-family: josefin sans;
 }
@@ -19,4 +31,47 @@ h1, h3 {
 .header > h3 {
   display: inline-block;
   vertical-align: middle;
+}
+
+.stock-info {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
+.company-header {
+  color: white;
+  background: black;
+  width: 500px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px auto;
+  font-family: josefin sans;
+}
+
+.info-box-a {
+  width: 300px;
+  padding: 15px;
+  background: grey;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.info-box-b {
+  width: 300px;
+  padding: 15px;
+  background: cadetblue;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.info-box-c {
+  width: 300px;
+  padding: 15px;
+  background: rgb(122, 185, 21);
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
 }
