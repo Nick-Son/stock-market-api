@@ -7,6 +7,7 @@ import SymbolHistory from './components/SymbolHistory'
 import NewsItem from './components/NewsItem'
 import SixMonthTable from './components/SixMonthTable'
 
+
 // Preloaded Data //
 
 loadQuoteForStock('nflx')
@@ -182,6 +183,7 @@ class App extends Component {
         }
           
         <br />
+
         <h2>Search History</h2>
         {
           symbolHistory.map((quote) => {
@@ -192,7 +194,7 @@ class App extends Component {
             //   })
             // console.log(companyLogo)
             return (
-              <div>
+              <div className="main-history-container" >
               {/* <img src={companyLogo} className="logo-image" /> */}
               <SymbolHistory 
                   symbol={quote.symbol}

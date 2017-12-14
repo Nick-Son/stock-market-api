@@ -97,6 +97,10 @@ h1, h3, h2 {
   margin: 10px;
 }
 
+.main-history-container {
+  display: flex;
+}
+
 .symbol-history-container {
   display: flex;
   width: 1000px;
@@ -152,5 +156,7 @@ th {
 }
 
 td {
-  padding: 10px;
+  margin: 0;
+  padding: 10px 20px;
+  border-right: 1px solid white;
 }
