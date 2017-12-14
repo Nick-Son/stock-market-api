@@ -2,6 +2,6 @@
 
 ![](/docs/screen.png)
 
-Displays upto date stock market data using the IEX Trading API.
+A simple React app that displays upto date stock market data using the IEX Trading API.
 
 
